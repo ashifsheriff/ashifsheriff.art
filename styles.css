@@ -296,7 +296,12 @@ a {
 
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
+  }
+
+  /* Force video/featured item to span full width on mobile for symmetry */
+  .video-item {
+    grid-column: span 2;
   }
 }
 

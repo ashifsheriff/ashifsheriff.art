@@ -356,3 +356,56 @@ a {
   font-family: var(--font-heading);
   /* Serif for reading */
 }
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+.social-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-main);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.social-links a {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--text-main);
+}
+
+/* Substack CTA on Writing Page */
+.substack-cta {
+  text-align: center;
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+}
+
+.substack-cta h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.substack-cta p {
+  font-size: 18px;
+  color: var(--accent);
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}

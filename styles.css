@@ -25,15 +25,26 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-<nav class="nav"><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>.nav a {
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.nav a {
   text-decoration: none;
-  color: #111;
-  padding: 6px 10px;
-  border-radius: 10px;
+  color: #555;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
 }
 
 .nav a:hover {
-  background: #f2f2f2;
+  background: #eee;
+  color: #111;
 }
 
 .button {

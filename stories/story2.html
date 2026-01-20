@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Zero — Ashif</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <a href="../index.html">Home</a>
+            <a href="../writing.html">Writing</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <article class="story-full">
+            <h1>Planet Zero</h1>
+            <p class="story-meta">Speculative fiction</p>
+
+            <p>
+                The geometry of the city was absolute. No curve was wasted, no line deviated from its purpose.
+                It was a planet designed for efficiency, not meaning.
+            </p>
+
+            <p>
+                Citizens moved in synchronized patterns, their paths optimized by the Great Algorithm.
+                There was no traffic, no delay, and most terrifyingly, no accidents.
+            </p>
+
+            <p>
+                But in the silence of the perfect grid, someone began to hum a tune that had no mathematical origin.
+            </p>
+        </article>
+
+        <footer class="site-footer">
+            <p>&copy; <span id="year"></span> Ashif Sheriff. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

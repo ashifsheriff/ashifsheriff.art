@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing — Asif</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="writing.html">Writing</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <h1>Writing</h1>
+      <p>
+        Short stories, fragments, and experiments.
+      </p>
+    </section>
+
+    <section class="section writing-list">
+      <article class="story">
+        <h2>The First Dawn</h2>
+        <p class="story-meta">Short story · 1,200 words</p>
+        <p>
+          A quiet moment where the world feels new again.
+        </p>
+        <a class="button" href="stories/story1.html">Read story</a>
+      </article>
+
+      <article class="story">
+        <h2>Planet Zero</h2>
+        <p class="story-meta">Speculative fiction</p>
+        <p>
+          A planet designed for efficiency, not meaning.
+        </p>
+        <a class="button" href="stories/story2.html">Read story</a>
+      </article>
+
+      <article class="story">
+        <h2>Breaking the Silence</h2>
+        <p class="story-meta">Flash fiction</p>
+        <p>
+          A moment stretched thin enough to see through.
+        </p>
+        <a class="button" href="#">Read story</a>
+      </article>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Asif</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

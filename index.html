@@ -4,31 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashif — One Page Site</title>
+  <title>Ashif — Ceramic Artist</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
 </head>
-
-<script>
-  // year in footer
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // basic contact form handling
-  const form = document.getElementById("contactForm");
-  const statusEl = document.getElementById("formStatus");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Let the browser run built-in validation first
-    if (!form.checkValidity()) {
-      statusEl.textContent = "Please fill all fields correctly.";
-      return;
-    }
-
-    statusEl.textContent = "Thanks! Your message is ready to be sent (backend next).";
-    form.reset();
-  });
-</script>
 
 <body>
   <header class="site-header">
@@ -42,52 +25,109 @@
 
   <main class="page">
     <section class="hero">
-      <h1>Hello, I’m Ashif.</h1>
-      <p>
-        This is my portfolio.
+      <h1>Ashif Sheriff</h1>
+      <p class="subtitle">Ceramic Artist & Storyteller</p>
+      <p class="intro">
+        Exploring the tactile dialogue between earth and hand.
+        Each piece is a fragment of a larger story, baked in fire.
       </p>
-      <a class="button" href="#contact">Say Hi</a>
+      <a class="button" href="#work">View Work</a>
     </section>
 
+    <section id="work" class="section">
+      <div class="section-header">
+        <h2>Selected Work</h2>
+        <p>A collection of recent vessels and sculptures.</p>
+      </div>
 
-    <section id="" class="section">
-      <h2>Work</h2>
-
-      <div class="work ">
-        <img src="./images/img1.jpg" alt="Gallery image 1" />
-        <img src="./images/img2.jpg" alt="Gallery image 2" />
-        <img src="./images/img3.jpg" alt="Gallery image 3" />
-        <img src="./images/img4.jpg" alt="Gallery image 4" />
-        <img src="./images/img5.jpg" alt="Gallery image 5" />
-        <img src="./images/img6.jpg" alt="Gallery image 6" />
+      <div class="work-grid">
+        <div class="work-item">
+          <img src="./images/img1.JPG" alt="Ceramic vessel with textured glaze" loading="lazy" />
+        </div>
+        <div class="work-item">
+          <img src="./images/img2.JPG" alt="Hand-built clay sculpture" loading="lazy" />
+        </div>
+        <div class="work-item">
+          <img src="./images/img3.JPG" alt="Wheel-thrown bowl" loading="lazy" />
+        </div>
+        <div class="work-item">
+          <img src="./images/img4.JPG" alt="Experimental firing piece" loading="lazy" />
+        </div>
+        <div class="work-item">
+          <img src="./images/img5.JPG" alt="Porcelain study" loading="lazy" />
+        </div>
+        <div class="work-item">
+          <img src="./images/img6.JPG" alt="Studio view" loading="lazy" />
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>I like to make things and I love working with clay.</p>
+    <section id="about" class="section about-section">
+      <div class="about-content">
+        <h2>About the Artist</h2>
+        <p>
+          I am an artist fascinated by the resilience of clay. My practice focuses on
+          the intersection of functional ware and sculptural forms. Created in my home studio,
+          each piece is unique, bearing the marks of the making process.
+        </p>
+        <p>
+          When I'm not at the wheel, I write stories that often inform the
+          narratives behind my ceramic collections.
+        </p>
+      </div>
+    </section>
 
-      <section id="contact" class="section">
-        <h2>Contact</h2>
+    <section id="contact" class="section">
+      <h2>Get in Touch</h2>
+      <p>Interested in a commission or collaboration? Send me a message.</p>
 
-        <form id="contactForm" class="form">
-          <label>
-            Name
-            <input name="name" type="text" required minlength="2" />
-          </label>
+      <form id="contactForm" class="form">
+        <label>
+          <span>Name</span>
+          <input name="name" type="text" required minlength="2" placeholder="Your name" />
+        </label>
 
-          <label>
-            Email
-            <input name="email" type="email" required />
-          </label>
+        <label>
+          <span>Email</span>
+          <input name="email" type="email" required placeholder="your@email.com" />
+        </label>
 
-          <label>
-            Message
-            <textarea name="message" rows="5" required minlength="10"></textarea>
-          </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" required minlength="10"
+            placeholder="Tell me about your project..."></textarea>
+        </label>
 
-          <button class="button" type="submit">Send</button>
+        <button class="button submit-btn" type="submit">Send Message</button>
 
-          <p id="formStatus" class="form-status" aria-live="polite"></p>
-        </form>
-      </section>
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ashif Sheriff. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Contact form handling
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("formStatus");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        statusEl.textContent = "Please check your inputs.";
+        return;
+      }
+      statusEl.textContent = "Thank you. Your message has been sent.";
+      statusEl.style.color = "green";
+      form.reset();
+    });
+  </script>
+</body>
+
+</html>

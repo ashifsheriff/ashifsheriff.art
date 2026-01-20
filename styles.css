@@ -178,13 +178,30 @@ a {
 }
 
 /* About */
+/* About */
 .about-section {
-  text-align: center;
+  padding: 120px 0;
 }
 
-.about-content {
-  max-width: 640px;
-  margin: 0 auto;
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  /* Adds to the artistic vibe, optional but nice */
+  transition: filter 0.5s ease;
+}
+
+.about-image:hover img {
+  filter: grayscale(0%);
 }
 
 .about-content p {
@@ -268,6 +285,11 @@ a {
 
   .page {
     padding: 0 20px;
+  }
+
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 

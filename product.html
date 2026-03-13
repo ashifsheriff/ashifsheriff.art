@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — Ashif Sheriff</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header static-nav" id="site-header">
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Work</a>
+        <a href="shop.html">Shop</a>
+        <a href="writing.html">Writing</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <button class="cart-icon-btn" aria-label="Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-count" style="display:none"></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="product-page" id="product-page">
+    <a href="shop.html" class="product-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Shop
+    </a>
+
+    <div class="product-layout" id="product-layout">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ashif Sheriff. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    // Parse product id from URL
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+    const product = PRODUCTS.find(p => p.id === productId);
+
+    if (!product) {
+      document.getElementById('product-layout').innerHTML = `
+        <div style="grid-column: span 2; text-align: center; padding: 80px 0; color: var(--text-muted);">
+          <p>Product not found. <a href="shop.html">Return to Shop</a></p>
+        </div>`;
+    } else {
+      // Update page title
+      document.title = `${product.name} — Ashif Sheriff`;
+
+      const sold = product.status === 'sold';
+      const inCart = Cart.get().includes(product.id);
+
+      // Build thumbnails HTML
+      const thumbsHTML = product.images.length > 1
+        ? `<div class="product-thumbnails">
+            ${product.images.map((img, i) => `
+              <img
+                src="./images/${img}"
+                alt="${product.name} view ${i + 1}"
+                class="product-thumb ${i === 0 ? 'active' : ''}"
+                onclick="switchImage(this, './images/${img}')"
+                loading="lazy"
+              />
+            `).join('')}
+           </div>`
+        : '';
+
+      // Button state
+      const btnText = sold ? 'Sold' : (inCart ? 'Added to Bag ✓' : 'Add to Bag');
+      const btnClass = sold ? 'button add-to-bag-btn' : (inCart ? 'button add-to-bag-btn added' : 'button add-to-bag-btn');
+
+      document.getElementById('product-layout').innerHTML = `
+        <div class="product-gallery">
+          <img
+            id="product-main-img"
+            class="product-main-img"
+            src="./images/${product.images[0]}"
+            alt="${product.name}"
+            loading="eager"
+          />
+          ${thumbsHTML}
+        </div>
+
+        <div class="product-info">
+          <span class="product-type">${product.type}</span>
+          <h1 class="product-name">${product.name}</h1>
+          <p class="product-price">₹${product.price.toLocaleString()}</p>
+
+          <hr class="product-divider" />
+
+          <p class="product-description">${product.description}</p>
+
+          <div class="product-meta">
+            <div class="product-meta-row">
+              <span class="product-meta-label">Dimensions</span>
+              <span class="product-meta-value">${product.dimensions}</span>
+            </div>
+            <div class="product-meta-row">
+              <span class="product-meta-label">Material</span>
+              <span class="product-meta-value">${product.material}</span>
+            </div>
+          </div>
+
+          <button
+            id="add-to-bag-btn"
+            class="${btnClass}"
+            onclick="handleAddToBag()"
+            ${sold ? 'disabled' : ''}
+          >${btnText}</button>
+
+          <p class="product-note">
+            ${sold ? 'This piece has been sold.' : 'Shipping worldwide · Enquire for international rates'}
+          </p>
+        </div>
+      `;
+    }
+
+    function switchImage(thumb, src) {
+      document.getElementById('product-main-img').src = src;
+      document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    function handleAddToBag() {
+      const btn = document.getElementById('add-to-bag-btn');
+      if (!btn || btn.disabled) return;
+
+      Cart.add(product.id);
+      btn.textContent = 'Added to Bag ✓';
+      btn.classList.add('added');
+      btn.disabled = true;
+
+      // Re-enable after 2s (allow re-open of drawer instead)
+      setTimeout(() => {
+        btn.disabled = false;
+      }, 2000);
+    }
+  </script>
+</body>
+
+</html>

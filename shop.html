@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Ashif Sheriff</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header static-nav" id="site-header">
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Work</a>
+        <a href="shop.html">Shop</a>
+        <a href="writing.html">Writing</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <button class="cart-icon-btn" aria-label="Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-count" style="display:none"></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="shop-page">
+    <div class="shop-header">
+      <h1>Shop</h1>
+      <p>Each piece is unique. Made by hand, fired once.</p>
+    </div>
+
+    <div class="shop-grid" id="shop-grid">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+
+  <section class="social-links">
+    <span class="social-label">Follow</span>
+    <a href="https://weeklyprophet.substack.com/" target="_blank" rel="noopener">Substack</a>
+    <a href="https://www.instagram.com/ashifsheriff/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/ashifsheriff/" target="_blank" rel="noopener">LinkedIn</a>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ashif Sheriff. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    // Render product grid
+    const grid = document.getElementById('shop-grid');
+
+    PRODUCTS.forEach(product => {
+      const sold = product.status === 'sold';
+      const card = document.createElement('a');
+      card.href = `product.html?id=${product.id}`;
+      card.className = 'shop-card';
+      card.innerHTML = `
+        <div class="shop-card-img-wrap">
+          <img src="./images/${product.images[0]}" alt="${product.name}" loading="lazy" />
+          ${sold ? '<span class="sold-badge">Sold</span>' : ''}
+        </div>
+        <div class="shop-card-info">
+          <span class="shop-card-name">${product.name}</span>
+          <span class="shop-card-price">${sold ? 'Sold' : '₹' + product.price.toLocaleString()}</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+
+</html>

@@ -4,40 +4,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashif — Ceramic Artist</title>
+  <title>Ashif Sheriff — Ceramic Artist</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
     rel="stylesheet">
 </head>
 
 <body>
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="writing.html">Writing</a>
-      <a href="#contact">Contact</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="shop.html">Shop</a>
+        <a href="writing.html">Writing</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="cart-icon-btn" aria-label="Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-count" style="display:none"></span>
+      </button>
     </nav>
   </header>
 
-  <main class="page">
-    <section class="hero">
+  <section class="hero">
+    <img class="hero-img" src="./images/hero.jpg" alt="Ceramic works in studio" loading="eager" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
       <h1>Ashif Sheriff</h1>
-      <p class="subtitle">Ceramic Artist & Storyteller</p>
-      <p class="intro">
-        Exploring the tactile dialogue between earth and hand.
-        Each piece is a fragment of a larger story, baked in fire.
-      </p>
-      <a class="button" href="#work">View Work</a>
-    </section>
+      <p class="hero-subtitle">Ceramic Artist</p>
+    </div>
+    <div class="hero-scroll">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </section>
 
+  <main class="page">
     <section id="about" class="section about-section">
       <div class="about-wrapper">
         <div class="about-image">
-          <img src="./images/ashif.jpg" alt="Portrait of Ashif Sheriff" loading="eager" />
+          <img src="./images/ashif.JPG" alt="Portrait of Ashif Sheriff" loading="eager" />
         </div>
         <div class="about-content">
           <h2>About me</h2>
@@ -62,34 +77,33 @@
 
       <div class="work-grid">
         <div class="work-item">
-          <img src="./images/img1.jpg" alt="Ceramic work 1" loading="eager" />
+          <img src="./images/img1.jpg" alt="Ceramic studio" loading="eager" />
         </div>
         <div class="work-item">
-          <img src="./images/img2.jpg" alt="Ceramic work 2" loading="eager" />
+          <img src="./images/img2.jpg" alt="Ceramic work" loading="eager" />
         </div>
         <div class="work-item">
-          <img src="./images/img3.jpg" alt="Ceramic work 3" loading="eager" />
+          <img src="./images/img3.jpg" alt="Ceramic work" loading="eager" />
         </div>
         <div class="work-item">
-          <img src="./images/img4.jpg" alt="Ceramic work 4" loading="eager" />
+          <img src="./images/h01.jpg" alt="Calligraphy vessel" loading="lazy" />
         </div>
         <div class="work-item video-item">
           <video autoplay muted loop playsinline>
             <source src="./images/vid.mov" type="video/mp4">
-            Your browser does not support the video tag.
           </video>
         </div>
         <div class="work-item">
-          <img src="./images/img5.jpg" alt="Ceramic work 5" loading="lazy" />
+          <img src="./images/h06.jpg" alt="Red ochre cup" loading="lazy" />
         </div>
         <div class="work-item">
-          <img src="./images/img6.jpg" alt="Ceramic work 6" loading="lazy" />
+          <img src="./images/img6.jpg" alt="Sculptural form" loading="lazy" />
         </div>
         <div class="work-item">
-          <img src="./images/img7.jpg" alt="Ceramic work 7" loading="lazy" />
+          <img src="./images/h10.jpg" alt="Matte cylinder" loading="lazy" />
         </div>
         <div class="work-item">
-          <img src="./images/img8.jpg" alt="Ceramic work 8" loading="lazy" />
+          <img src="./images/img8.jpg" alt="Ceramic tower" loading="lazy" />
         </div>
       </div>
     </section>
@@ -134,13 +148,23 @@
   </footer>
 
   <script>
-    // Update year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Contact form handling
+    // Nav: transparent over hero, solid after scroll
+    const header = document.getElementById('site-header');
+    function updateHeader() {
+      if (window.scrollY > window.innerHeight - 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
+    // Contact form
     const form = document.getElementById("contactForm");
     const statusEl = document.getElementById("formStatus");
-
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
@@ -152,6 +176,8 @@
       form.reset();
     });
   </script>
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /worldmonitor
+Disallow: /worldmonitor/
+Allow: /

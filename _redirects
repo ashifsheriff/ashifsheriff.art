@@ -1,0 +1,17 @@
+# ─── WorldMonitor proxy ─────────────────────────────────────────────────────
+# Transparent proxy (200 = URL stays as ashifsheriff.art/... in browser)
+# /sw.js is intentionally NOT proxied — prevents the service worker from
+# claiming the whole ashifsheriff.art origin.
+
+/worldmonitor                  https://worldmonitor-theta-sooty.vercel.app/                          200
+/worldmonitor/*                https://worldmonitor-theta-sooty.vercel.app/:splat                    200
+/assets/*                      https://worldmonitor-theta-sooty.vercel.app/assets/:splat             200
+/api/*                         https://worldmonitor-theta-sooty.vercel.app/api/:splat                200
+/map-styles/*                  https://worldmonitor-theta-sooty.vercel.app/map-styles/:splat         200
+/data/*                        https://worldmonitor-theta-sooty.vercel.app/data/:splat               200
+/textures/*                    https://worldmonitor-theta-sooty.vercel.app/textures/:splat           200
+/favico/*                      https://worldmonitor-theta-sooty.vercel.app/favico/:splat             200
+/blog/*                        https://worldmonitor-theta-sooty.vercel.app/blog/:splat               200
+/manifest.webmanifest          https://worldmonitor-theta-sooty.vercel.app/manifest.webmanifest      200
+/offline.html                  https://worldmonitor-theta-sooty.vercel.app/offline.html              200
+/workbox-:hash.js              https://worldmonitor-theta-sooty.vercel.app/workbox-:hash.js          200

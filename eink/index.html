@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-ink Display — Ashif Sheriff</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FDFCF8;
+      --text: #2C2C2C;
+      --muted: #888;
+      --border: #E5E5E5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 48px 24px 80px;
+      max-width: 460px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+    a.back { font-size: 12px; color: var(--muted); text-decoration: none; display: block; margin-bottom: 32px; }
+    a.back:hover { color: var(--text); }
+    h1 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 30px; margin-bottom: 4px; }
+    .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 32px; }
+
+    /* Preview */
+    .preview-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      background: #fff;
+    }
+    .preview-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 800/480;
+      object-fit: contain;
+      background: #f5f5f0;
+    }
+    .preview-card .meta {
+      padding: 10px 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mode-badge {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .last-update { font-size: 12px; color: var(--muted); }
+
+    /* Section label */
+    .label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    /* Buttons */
+    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    button {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.12s;
+      line-height: 1;
+    }
+    button:hover { background: #F0EFE8; }
+    button.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+    button.primary:hover { background: #444; }
+    button:disabled { opacity: 0.4; cursor: default; }
+    button.icon-btn { padding: 8px 12px; font-size: 16px; }
+
+    /* Form */
+    .field { margin-bottom: 14px; }
+    label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 5px; }
+    input, textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: white;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    input:focus, textarea:focus { border-color: #aaa; }
+    textarea { min-height: 90px; resize: vertical; }
+    .form-row { display: flex; gap: 8px; align-items: flex-start; margin-top: 4px; }
+    .form-row input { flex: 1; }
+
+    /* Settings */
+    .settings-section {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-top: 12px;
+    }
+    .settings-toggle {
+      font-size: 12px;
+      color: var(--muted);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .settings-toggle:hover { color: var(--text); background: none; }
+    .settings-inner { display: none; margin-top: 16px; }
+    .settings-inner.open { display: block; }
+
+    /* No-config banner */
+    #setup-banner {
+      background: #faf7f0;
+      border: 1px solid #e8e0cc;
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      line-height: 1.6;
+      display: none;
+    }
+    #setup-banner.show { display: block; }
+    #setup-banner strong { display: block; margin-bottom: 4px; }
+
+    /* Toast */
+    #toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+      background: var(--text); color: var(--bg);
+      padding: 10px 20px; border-radius: 20px; font-size: 13px;
+      opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap;
+    }
+    #toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <a class="back" href="/">← ashifsheriff.art</a>
+  <h1>E-ink Display</h1>
+  <p class="subtitle">Control the Raspberry Pi dashboard from anywhere</p>
+
+  <div id="setup-banner">
+    <strong>Set your API URL first</strong>
+    Open <em>API settings</em> below and paste your Cloudflare Tunnel URL.
+  </div>
+
+  <div class="preview-card">
+    <img id="preview" src="" alt="Display preview" />
+    <div class="meta">
+      <span class="mode-badge" id="mode-badge">—</span>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span class="last-update" id="last-update"></span>
+        <button class="icon-btn" title="Refresh preview" onclick="loadStatus()">↺</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="label">Quick actions</div>
+  <div class="btn-row">
+    <button onclick="doRefresh()">↻ Refresh display</button>
+    <button onclick="doClear()">Switch to dashboard</button>
+  </div>
+
+  <div class="label">Brainstorm mode</div>
+  <div class="field">
+    <label for="topic">Topic</label>
+    <input id="topic" type="text" placeholder="What are we thinking about?" />
+  </div>
+  <div class="field">
+    <label for="bullets">Bullets <span style="font-weight:300;font-size:11px">(one per line)</span></label>
+    <textarea id="bullets" placeholder="First idea&#10;Second idea&#10;Third idea"></textarea>
+  </div>
+  <div class="btn-row" style="margin-bottom:32px">
+    <button class="primary" onclick="doBrainstorm()">Push to display</button>
+  </div>
+
+  <div class="settings-section">
+    <button class="settings-toggle" onclick="toggleSettings()">⚙ API settings</button>
+    <div class="settings-inner" id="settings-inner">
+      <div class="field">
+        <label for="api-url">Cloudflare Tunnel URL</label>
+        <div class="form-row">
+          <input id="api-url" type="url" placeholder="https://xxxx.trycloudflare.com" />
+          <button onclick="saveUrl()">Save</button>
+        </div>
+        <p style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5">
+          Check <code>~/.eink-tunnel.log</code> on the Pi for the current URL. Updates when the Pi restarts.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+<script>
+const URL_KEY = "eink_api_url";
+
+function getApi() {
+  return (localStorage.getItem(URL_KEY) || "").replace(/\/$/, "");
+}
+
+function toast(msg, dur = 2500) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(t._tid);
+  t._tid = setTimeout(() => t.classList.remove("show"), dur);
+}
+
+async function call(path, method = "GET", body = null) {
+  const base = getApi();
+  if (!base) { toast("Set your API URL in settings first"); return null; }
+  try {
+    const opts = { method, headers: { "Content-Type": "application/json" } };
+    if (body) opts.body = JSON.stringify(body);
+    const r = await fetch(base + path, opts);
+    return r.ok ? r.json() : null;
+  } catch {
+    toast("Can't reach the Pi — is the tunnel up?", 3500);
+    return null;
+  }
+}
+
+async function loadStatus() {
+  const base = getApi();
+  if (!base) {
+    document.getElementById("setup-banner").classList.add("show");
+    return;
+  }
+  document.getElementById("setup-banner").classList.remove("show");
+
+  const img = document.getElementById("preview");
+  img.src = base + "/preview?t=" + Date.now();
+  img.onerror = () => { img.src = ""; img.alt = "Preview unavailable"; };
+
+  const s = await call("/status");
+  if (s) {
+    document.getElementById("mode-badge").textContent = s.mode || "dashboard";
+    document.getElementById("last-update").textContent = s.last_update ? "updated " + s.last_update : "";
+  }
+}
+
+async function doRefresh() {
+  toast("Refreshing display…");
+  const r = await call("/refresh", "POST");
+  if (r) setTimeout(loadStatus, 10000);
+}
+
+async function doClear() {
+  toast("Switching to dashboard…");
+  const r = await call("/clear-brainstorm", "POST");
+  if (r) setTimeout(loadStatus, 10000);
+}
+
+async function doBrainstorm() {
+  const topic   = document.getElementById("topic").value.trim() || "Brainstorm";
+  const bullets = document.getElementById("bullets").value
+    .split("\n").map(l => l.trim()).filter(Boolean);
+  if (!bullets.length) { toast("Add at least one bullet point"); return; }
+  toast("Pushing to display…");
+  const r = await call("/brainstorm", "POST", { topic, bullets });
+  if (r) setTimeout(loadStatus, 10000);
+}
+
+function toggleSettings() {
+  const el = document.getElementById("settings-inner");
+  el.classList.toggle("open");
+  if (el.classList.contains("open")) {
+    document.getElementById("api-url").value = getApi();
+  }
+}
+
+function saveUrl() {
+  const val = document.getElementById("api-url").value.trim();
+  if (!val) return;
+  localStorage.setItem(URL_KEY, val);
+  document.getElementById("settings-inner").classList.remove("open");
+  toast("Saved");
+  loadStatus();
+}
+
+loadStatus();
+setInterval(loadStatus, 60000);
+</script>
+</body>
+</html>

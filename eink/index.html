@@ -177,22 +177,8 @@
   </div>
 
   <div class="label">Quick actions</div>
-  <div class="btn-row">
-    <button onclick="doRefresh()">↻ Refresh display</button>
-    <button onclick="doClear()">Switch to dashboard</button>
-  </div>
-
-  <div class="label">Brainstorm mode</div>
-  <div class="field">
-    <label for="topic">Topic</label>
-    <input id="topic" type="text" placeholder="What are we thinking about?" />
-  </div>
-  <div class="field">
-    <label for="bullets">Bullets <span style="font-weight:300;font-size:11px">(one per line)</span></label>
-    <textarea id="bullets" placeholder="First idea&#10;Second idea&#10;Third idea"></textarea>
-  </div>
   <div class="btn-row" style="margin-bottom:32px">
-    <button class="primary" onclick="doBrainstorm()">Push to display</button>
+    <button onclick="doRefresh()">↻ Refresh display</button>
   </div>
 
   <div class="settings-section">
@@ -264,22 +250,6 @@ async function loadStatus() {
 async function doRefresh() {
   toast("Refreshing display…");
   const r = await call("/refresh", "POST");
-  if (r) setTimeout(loadStatus, 10000);
-}
-
-async function doClear() {
-  toast("Switching to dashboard…");
-  const r = await call("/clear-brainstorm", "POST");
-  if (r) setTimeout(loadStatus, 10000);
-}
-
-async function doBrainstorm() {
-  const topic   = document.getElementById("topic").value.trim() || "Brainstorm";
-  const bullets = document.getElementById("bullets").value
-    .split("\n").map(l => l.trim()).filter(Boolean);
-  if (!bullets.length) { toast("Add at least one bullet point"); return; }
-  toast("Pushing to display…");
-  const r = await call("/brainstorm", "POST", { topic, bullets });
   if (r) setTimeout(loadStatus, 10000);
 }
 

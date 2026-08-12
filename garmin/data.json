@@ -1,0 +1,445 @@
+{
+  "date": "2026-08-12",
+  "generated_at": "2026-08-12T13:37:21.143237",
+  "full_name": "Ashif sheriff",
+  "summary": {
+    "userProfileId": 147746810,
+    "totalKilocalories": 1491.0,
+    "activeKilocalories": 333.0,
+    "bmrKilocalories": 1158.0,
+    "wellnessKilocalories": 1491.0,
+    "burnedKilocalories": null,
+    "consumedKilocalories": null,
+    "remainingKilocalories": null,
+    "totalSteps": 4995,
+    "netCalorieGoal": null,
+    "totalDistanceMeters": 4056,
+    "wellnessDistanceMeters": 4056,
+    "wellnessActiveKilocalories": 333.0,
+    "netRemainingKilocalories": 333.0,
+    "userDailySummaryId": 147746810,
+    "calendarDate": "2026-08-12",
+    "rule": {
+      "typeId": 2,
+      "typeKey": "private"
+    },
+    "uuid": "572fbfbbc6614c1bbc614a80461d0bc5",
+    "dailyStepGoal": 6230,
+    "wellnessStartTimeGmt": "2026-08-11T18:30:00.0",
+    "wellnessStartTimeLocal": "2026-08-12T00:00:00.0",
+    "wellnessEndTimeGmt": "2026-08-12T07:24:00.0",
+    "wellnessEndTimeLocal": "2026-08-12T12:54:00.0",
+    "durationInMilliseconds": 46440000,
+    "wellnessDescription": null,
+    "highlyActiveSeconds": 1183,
+    "activeSeconds": 3967,
+    "sedentarySeconds": 16450,
+    "sleepingSeconds": 24840,
+    "includesWellnessData": true,
+    "includesActivityData": false,
+    "includesCalorieConsumedData": false,
+    "privacyProtected": false,
+    "moderateIntensityMinutes": 2,
+    "vigorousIntensityMinutes": 2,
+    "floorsAscendedInMeters": 0.0,
+    "floorsDescendedInMeters": 0.0,
+    "floorsAscended": 0.0,
+    "floorsDescended": 0.0,
+    "intensityMinutesGoal": 150,
+    "userFloorsAscendedGoal": 10,
+    "minHeartRate": 56,
+    "maxHeartRate": 126,
+    "restingHeartRate": 61,
+    "lastSevenDaysAvgRestingHeartRate": 62,
+    "source": "GARMIN",
+    "averageStressLevel": 29,
+    "maxStressLevel": 99,
+    "stressDuration": 12960,
+    "restStressDuration": 24480,
+    "activityStressDuration": 4320,
+    "uncategorizedStressDuration": 4680,
+    "totalStressDuration": 46440,
+    "lowStressDuration": 6600,
+    "mediumStressDuration": 3600,
+    "highStressDuration": 2760,
+    "stressPercentage": 27.91,
+    "restStressPercentage": 52.71,
+    "activityStressPercentage": 9.3,
+    "uncategorizedStressPercentage": 10.08,
+    "lowStressPercentage": 14.21,
+    "mediumStressPercentage": 7.75,
+    "highStressPercentage": 5.94,
+    "stressQualifier": "UNKNOWN",
+    "measurableAwakeDuration": 17640,
+    "measurableAsleepDuration": 24120,
+    "lastSyncTimestampGMT": "2026-08-12T07:24:53.620",
+    "minAvgHeartRate": 57,
+    "maxAvgHeartRate": 125,
+    "bodyBatteryChargedValue": 59,
+    "bodyBatteryDrainedValue": 22,
+    "bodyBatteryHighestValue": 66,
+    "bodyBatteryLowestValue": 7,
+    "bodyBatteryMostRecentValue": 48,
+    "bodyBatteryDuringSleep": 59,
+    "bodyBatteryAtWakeTime": 66,
+    "bodyBatteryVersion": 3.0,
+    "abnormalHeartRateAlertsCount": null,
+    "averageSpo2": 94.0,
+    "lowestSpo2": 85,
+    "latestSpo2": 99,
+    "latestSpo2ReadingTimeGmt": "2026-08-12T02:29:00.0",
+    "latestSpo2ReadingTimeLocal": "2026-08-12T07:59:00.0",
+    "averageMonitoringEnvironmentAltitude": 903.0,
+    "restingCaloriesFromActivity": null,
+    "bodyBatteryDynamicFeedbackEvent": {
+      "eventTimestampGmt": "2026-08-12T06:37:41",
+      "bodyBatteryLevel": "LOW",
+      "feedbackShortType": "DAY_STRESSFUL_AND_INACTIVE",
+      "feedbackLongType": "DAY_STRESSFUL_AND_INACTIVE_AND_BB_LOW"
+    },
+    "endOfDayBodyBatteryDynamicFeedbackEvent": {
+      "eventTimestampGmt": "2026-08-11T22:51:47",
+      "bodyBatteryLevel": "HIGH",
+      "feedbackShortType": "SLEEP_TIME_PASSED_STRESSFUL_AND_INACTIVE",
+      "feedbackLongType": "SLEEP_TIME_PASSED_STRESSFUL_AND_INACTIVE"
+    },
+    "bodyBatteryActivityEventList": [
+      {
+        "eventType": "SLEEP",
+        "eventStartTimeGmt": "2026-08-11T19:43:30",
+        "timezoneOffset": 19800000,
+        "durationInMilliseconds": 24840000,
+        "bodyBatteryImpact": 59,
+        "feedbackType": "NONE",
+        "shortFeedback": "NONE",
+        "deviceId": 3627931263,
+        "activityName": null,
+        "activityType": null,
+        "activityId": null,
+        "eventUpdateTimeGmt": "2026-08-12T02:39:20"
+      }
+    ],
+    "avgWakingRespirationValue": 17.0,
+    "highestRespirationValue": 23.0,
+    "lowestRespirationValue": 7.0,
+    "latestRespirationValue": 10.0,
+    "latestRespirationTimeGMT": "2026-08-12T06:23:00.0",
+    "respirationAlgorithmVersion": 200
+  },
+  "sleep": {
+    "sleep_seconds": 22680,
+    "sleep_score": 68,
+    "sleep_score_qualifier": "FAIR",
+    "deep_sleep_seconds": 3660,
+    "light_sleep_seconds": 16980,
+    "rem_sleep_seconds": 2040,
+    "awake_seconds": 720,
+    "avg_sleep_stress": 23.0,
+    "avg_spo2_percent": null
+  },
+  "hrv": {
+    "last_night_avg_hrv_ms": 52,
+    "weekly_avg_hrv_ms": null,
+    "baseline_balanced_low_ms": 46,
+    "baseline_balanced_upper_ms": 55,
+    "status": "NONE"
+  },
+  "readiness": {
+    "score": 85,
+    "level": "HIGH",
+    "feedback": "EXCELLENT_RECOVERY",
+    "sleep_score": 68,
+    "recovery_factor_feedback": "GOOD",
+    "training_load_feedback": "VERY_GOOD",
+    "hrv_weekly_avg": 511
+  },
+  "training_status": {
+    "training_status_feedback": "DETRAINING",
+    "chronic_load": 219,
+    "acute_load": 0,
+    "optimal_chronic_load_min": 175.20000000000002,
+    "optimal_chronic_load_max": 328.5,
+    "vo2_max": 48.0
+  },
+  "steps_trend": [
+    {
+      "calendarDate": "2026-07-14",
+      "totalSteps": 5568,
+      "stepGoal": 9940
+    },
+    {
+      "calendarDate": "2026-07-15",
+      "totalSteps": 11225,
+      "stepGoal": 9070
+    },
+    {
+      "calendarDate": "2026-07-16",
+      "totalSteps": 9242,
+      "stepGoal": 9290
+    },
+    {
+      "calendarDate": "2026-07-17",
+      "totalSteps": 6134,
+      "stepGoal": 9290
+    },
+    {
+      "calendarDate": "2026-07-18",
+      "totalSteps": 1559,
+      "stepGoal": 8660
+    },
+    {
+      "calendarDate": "2026-07-19",
+      "totalSteps": 1360,
+      "stepGoal": 8660
+    },
+    {
+      "calendarDate": "2026-07-20",
+      "totalSteps": 9685,
+      "stepGoal": 7200
+    },
+    {
+      "calendarDate": "2026-07-21",
+      "totalSteps": 7341,
+      "stepGoal": 7450
+    },
+    {
+      "calendarDate": "2026-07-22",
+      "totalSteps": 4642,
+      "stepGoal": 7440
+    },
+    {
+      "calendarDate": "2026-07-23",
+      "totalSteps": 6454,
+      "stepGoal": 6880
+    },
+    {
+      "calendarDate": "2026-07-24",
+      "totalSteps": 5683,
+      "stepGoal": 6800
+    },
+    {
+      "calendarDate": "2026-07-25",
+      "totalSteps": 9629,
+      "stepGoal": 6580
+    },
+    {
+      "calendarDate": "2026-07-26",
+      "totalSteps": 6680,
+      "stepGoal": 6890
+    },
+    {
+      "calendarDate": "2026-07-27",
+      "totalSteps": 4611,
+      "stepGoal": 6870
+    },
+    {
+      "calendarDate": "2026-07-28",
+      "totalSteps": 3787,
+      "stepGoal": 6420
+    },
+    {
+      "calendarDate": "2026-07-29",
+      "totalSteps": 6556,
+      "stepGoal": 5900
+    },
+    {
+      "calendarDate": "2026-07-30",
+      "totalSteps": 8659,
+      "stepGoal": 5970
+    },
+    {
+      "calendarDate": "2026-07-31",
+      "totalSteps": 10083,
+      "stepGoal": 6510
+    },
+    {
+      "calendarDate": "2026-08-01",
+      "totalSteps": 4006,
+      "stepGoal": 7230
+    },
+    {
+      "calendarDate": "2026-08-02",
+      "totalSteps": 9066,
+      "stepGoal": 6910
+    },
+    {
+      "calendarDate": "2026-08-03",
+      "totalSteps": 4712,
+      "stepGoal": 7130
+    },
+    {
+      "calendarDate": "2026-08-04",
+      "totalSteps": 6259,
+      "stepGoal": 6890
+    },
+    {
+      "calendarDate": "2026-08-05",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-08-06",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-08-07",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-08-08",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-08-09",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-08-10",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-08-11",
+      "totalSteps": 3588,
+      "stepGoal": 6890
+    },
+    {
+      "calendarDate": "2026-08-12",
+      "totalSteps": 4995,
+      "stepGoal": 6230
+    }
+  ],
+  "battery_trend": [
+    {
+      "date": "2026-07-30",
+      "charged": 49
+    },
+    {
+      "date": "2026-07-31",
+      "charged": 0
+    },
+    {
+      "date": "2026-08-01",
+      "charged": 52
+    },
+    {
+      "date": "2026-08-02",
+      "charged": 60
+    },
+    {
+      "date": "2026-08-03",
+      "charged": 66
+    },
+    {
+      "date": "2026-08-04",
+      "charged": 63
+    },
+    {
+      "date": "2026-08-05",
+      "charged": null
+    },
+    {
+      "date": "2026-08-06",
+      "charged": null
+    },
+    {
+      "date": "2026-08-07",
+      "charged": null
+    },
+    {
+      "date": "2026-08-08",
+      "charged": null
+    },
+    {
+      "date": "2026-08-09",
+      "charged": null
+    },
+    {
+      "date": "2026-08-10",
+      "charged": null
+    },
+    {
+      "date": "2026-08-11",
+      "charged": 0
+    },
+    {
+      "date": "2026-08-12",
+      "charged": 59
+    }
+  ],
+  "weigh_ins": [
+    {
+      "date": "2026-06-23",
+      "weight_kg": 82.0
+    }
+  ],
+  "activities": [
+    {
+      "name": "Bengaluru Running",
+      "type": "running",
+      "start_time": "2026-07-31 09:21:04",
+      "distance_meters": 1480.3599853515625,
+      "duration_seconds": 820.5960083007812,
+      "calories": 133.0,
+      "avg_hr_bpm": 125.0
+    },
+    {
+      "name": "Pool Swim",
+      "type": "lap_swimming",
+      "start_time": "2026-07-29 17:26:58",
+      "distance_meters": 300.0,
+      "duration_seconds": 1553.0030517578125,
+      "calories": 229.0,
+      "avg_hr_bpm": 118.0
+    },
+    {
+      "name": "Bengaluru Walking",
+      "type": "walking",
+      "start_time": "2026-07-28 09:36:07",
+      "distance_meters": 1558.0,
+      "duration_seconds": 1081.050048828125,
+      "calories": 119.0,
+      "avg_hr_bpm": 105.0
+    },
+    {
+      "name": "Bengaluru Walking",
+      "type": "walking",
+      "start_time": "2026-07-16 09:40:17",
+      "distance_meters": 2526.85009765625,
+      "duration_seconds": 2369.866943359375,
+      "calories": 173.0,
+      "avg_hr_bpm": 75.0
+    },
+    {
+      "name": "Bengaluru Walking",
+      "type": "walking",
+      "start_time": "2026-07-13 09:25:58",
+      "distance_meters": 2040.030029296875,
+      "duration_seconds": 1838.5050048828125,
+      "calories": 142.0,
+      "avg_hr_bpm": 87.0
+    },
+    {
+      "name": "Pool Swim",
+      "type": "lap_swimming",
+      "start_time": "2026-07-12 15:58:23",
+      "distance_meters": 50.0,
+      "duration_seconds": 191.1439971923828,
+      "calories": 16.0,
+      "avg_hr_bpm": 116.0
+    },
+    {
+      "name": "Pool Swim",
+      "type": "lap_swimming",
+      "start_time": "2026-07-12 15:49:57",
+      "distance_meters": 125.0,
+      "duration_seconds": 371.9230041503906,
+      "calories": 36.0,
+      "avg_hr_bpm": 119.0
+    }
+  ]
+}

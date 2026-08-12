@@ -740,7 +740,11 @@ def deploy(commit_message: str) -> None:
         return subprocess.run(args, cwd=REPO_ROOT, check=True, capture_output=True, text=True)
 
     run("git", "fetch", "origin", "main")
-    run("git", "pull", "--rebase", "origin", "main")
+    # --autostash: this repo often has unrelated in-progress edits sitting in
+    # the working tree from other projects; autostash sets them aside for the
+    # rebase and restores them after, so this script never has to know about
+    # or touch work that isn't its own.
+    run("git", "pull", "--rebase", "--autostash", "origin", "main")
     run("git", "add", "garmin/")
     status = subprocess.run(
         ["git", "diff", "--cached", "--quiet"], cwd=REPO_ROOT

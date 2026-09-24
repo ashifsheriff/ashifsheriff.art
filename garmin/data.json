@@ -1,105 +1,10 @@
 {
-  "date": "2026-09-11",
-  "generated_at": "2026-09-11T07:14:04.246682",
+  "date": "2026-09-24",
+  "generated_at": "2026-09-24T17:30:30.409097",
   "full_name": "Ashif sheriff",
-  "metrics_date": "2026-09-07",
-  "is_stale": true,
-  "summary": {
-    "userProfileId": 147746810,
-    "totalKilocalories": 1622.0,
-    "activeKilocalories": 0.0,
-    "bmrKilocalories": 1622.0,
-    "wellnessKilocalories": 1622.0,
-    "burnedKilocalories": null,
-    "consumedKilocalories": null,
-    "remainingKilocalories": null,
-    "totalSteps": null,
-    "netCalorieGoal": null,
-    "totalDistanceMeters": null,
-    "wellnessDistanceMeters": null,
-    "wellnessActiveKilocalories": 0.0,
-    "netRemainingKilocalories": 0.0,
-    "userDailySummaryId": 147746810,
-    "calendarDate": "2026-09-07",
-    "rule": {
-      "typeId": 2,
-      "typeKey": "private"
-    },
-    "uuid": "8b6d36d35b6a4737bcf6c1a113695b02",
-    "dailyStepGoal": 5150,
-    "wellnessStartTimeGmt": "2026-09-06T18:30:00.0",
-    "wellnessStartTimeLocal": "2026-09-07T00:00:00.0",
-    "wellnessEndTimeGmt": "2026-09-07T12:34:00.0",
-    "wellnessEndTimeLocal": "2026-09-07T18:04:00.0",
-    "durationInMilliseconds": 65040000,
-    "wellnessDescription": null,
-    "highlyActiveSeconds": 0,
-    "activeSeconds": 0,
-    "sedentarySeconds": 65040,
-    "sleepingSeconds": 0,
-    "includesWellnessData": true,
-    "includesActivityData": false,
-    "includesCalorieConsumedData": false,
-    "privacyProtected": false,
-    "moderateIntensityMinutes": 0,
-    "vigorousIntensityMinutes": 0,
-    "floorsAscendedInMeters": 0.0,
-    "floorsDescendedInMeters": 0.0,
-    "floorsAscended": 0.0,
-    "floorsDescended": 0.0,
-    "intensityMinutesGoal": 150,
-    "userFloorsAscendedGoal": 10,
-    "minHeartRate": null,
-    "maxHeartRate": null,
-    "restingHeartRate": null,
-    "lastSevenDaysAvgRestingHeartRate": null,
-    "source": "GARMIN",
-    "averageStressLevel": -1,
-    "maxStressLevel": null,
-    "stressDuration": null,
-    "restStressDuration": null,
-    "activityStressDuration": null,
-    "uncategorizedStressDuration": 64980,
-    "totalStressDuration": 64980,
-    "lowStressDuration": null,
-    "mediumStressDuration": null,
-    "highStressDuration": null,
-    "stressPercentage": 0.0,
-    "restStressPercentage": 0.0,
-    "activityStressPercentage": 0.0,
-    "uncategorizedStressPercentage": 100.0,
-    "lowStressPercentage": 0.0,
-    "mediumStressPercentage": 0.0,
-    "highStressPercentage": 0.0,
-    "stressQualifier": "UNKNOWN",
-    "measurableAwakeDuration": 0,
-    "measurableAsleepDuration": 0,
-    "lastSyncTimestampGMT": null,
-    "minAvgHeartRate": null,
-    "maxAvgHeartRate": null,
-    "bodyBatteryChargedValue": null,
-    "bodyBatteryDrainedValue": null,
-    "bodyBatteryHighestValue": null,
-    "bodyBatteryLowestValue": null,
-    "bodyBatteryMostRecentValue": null,
-    "bodyBatteryDuringSleep": null,
-    "bodyBatteryAtWakeTime": null,
-    "bodyBatteryVersion": null,
-    "abnormalHeartRateAlertsCount": null,
-    "averageSpo2": null,
-    "lowestSpo2": null,
-    "latestSpo2": null,
-    "latestSpo2ReadingTimeGmt": null,
-    "latestSpo2ReadingTimeLocal": null,
-    "averageMonitoringEnvironmentAltitude": 898.0,
-    "restingCaloriesFromActivity": null,
-    "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-09-07T07:50:53",
-      "bodyBatteryLevel": "MODERATE",
-      "feedbackShortType": "NO_DATA",
-      "feedbackLongType": "NO_DATA"
-    }
-  },
+  "metrics_date": "2026-09-24",
+  "is_stale": false,
+  "summary": {},
   "last_sync": "2026-09-07T18:05:14",
   "last_sync_device": "Descent G2",
   "sleep": {
@@ -113,96 +18,17 @@
     "avg_sleep_stress": null,
     "avg_spo2_percent": null
   },
-  "hrv": {
-    "last_night_avg_hrv_ms": null,
-    "weekly_avg_hrv_ms": 43,
-    "baseline_balanced_low_ms": 46,
-    "baseline_balanced_upper_ms": 58,
-    "status": "LOW"
-  },
-  "readiness": {
-    "score": 42,
-    "level": "LOW",
-    "feedback": "TAKE_IT_EASY",
-    "sleep_score": null,
-    "recovery_factor_feedback": "GOOD",
-    "training_load_feedback": "VERY_GOOD",
-    "hrv_weekly_avg": 43
-  },
+  "hrv": {},
+  "readiness": {},
   "training_status": {
-    "training_status_feedback": "DETRAINING",
-    "chronic_load": 137,
-    "acute_load": 0,
-    "optimal_chronic_load_min": 109.60000000000001,
-    "optimal_chronic_load_max": 205.5,
-    "vo2_max": 41.0
+    "training_status_feedback": null,
+    "chronic_load": null,
+    "acute_load": null,
+    "optimal_chronic_load_min": null,
+    "optimal_chronic_load_max": null,
+    "vo2_max": null
   },
   "steps_trend": [
-    {
-      "calendarDate": "2026-08-13",
-      "totalSteps": 5874,
-      "stepGoal": 6510
-    },
-    {
-      "calendarDate": "2026-08-14",
-      "totalSteps": 2661,
-      "stepGoal": 6450
-    },
-    {
-      "calendarDate": "2026-08-15",
-      "totalSteps": 5438,
-      "stepGoal": 5700
-    },
-    {
-      "calendarDate": "2026-08-16",
-      "totalSteps": 7555,
-      "stepGoal": 5650
-    },
-    {
-      "calendarDate": "2026-08-17",
-      "totalSteps": 7458,
-      "stepGoal": 5840
-    },
-    {
-      "calendarDate": "2026-08-18",
-      "totalSteps": 9813,
-      "stepGoal": 6170
-    },
-    {
-      "calendarDate": "2026-08-19",
-      "totalSteps": 8876,
-      "stepGoal": 6900
-    },
-    {
-      "calendarDate": "2026-08-20",
-      "totalSteps": 8714,
-      "stepGoal": 7300
-    },
-    {
-      "calendarDate": "2026-08-21",
-      "totalSteps": 7664,
-      "stepGoal": 7590
-    },
-    {
-      "calendarDate": "2026-08-22",
-      "totalSteps": 892,
-      "stepGoal": 7610
-    },
-    {
-      "calendarDate": "2026-08-23",
-      "totalSteps": null,
-      "stepGoal": 6940
-    },
-    {
-      "calendarDate": "2026-08-24",
-      "totalSteps": null,
-      "stepGoal": 6940
-    },
-    {
-      "calendarDate": "2026-08-25",
-      "totalSteps": null,
-      "stepGoal": 6940
-    },
     {
       "calendarDate": "2026-08-26",
       "totalSteps": null,
@@ -287,63 +113,128 @@
       "calendarDate": "2026-09-11",
       "totalSteps": null,
       "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-12",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-13",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-14",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-15",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-16",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-17",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-18",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-19",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-20",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-21",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-22",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-23",
+      "totalSteps": null,
+      "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-24",
+      "totalSteps": null,
+      "stepGoal": null
     }
   ],
   "battery_trend": [
     {
-      "date": "2026-08-29",
-      "charged": 41
-    },
-    {
-      "date": "2026-08-30",
-      "charged": 0
-    },
-    {
-      "date": "2026-08-31",
-      "charged": 46
-    },
-    {
-      "date": "2026-09-01",
-      "charged": 79
-    },
-    {
-      "date": "2026-09-02",
-      "charged": 69
-    },
-    {
-      "date": "2026-09-03",
-      "charged": 75
-    },
-    {
-      "date": "2026-09-04",
-      "charged": 60
-    },
-    {
-      "date": "2026-09-05",
-      "charged": 10
-    },
-    {
-      "date": "2026-09-06",
-      "charged": 23
-    },
-    {
-      "date": "2026-09-07",
-      "charged": null
-    },
-    {
-      "date": "2026-09-08",
-      "charged": null
-    },
-    {
-      "date": "2026-09-09",
-      "charged": null
-    },
-    {
-      "date": "2026-09-10",
-      "charged": null
-    },
-    {
       "date": "2026-09-11",
+      "charged": null
+    },
+    {
+      "date": "2026-09-12",
+      "charged": null
+    },
+    {
+      "date": "2026-09-13",
+      "charged": null
+    },
+    {
+      "date": "2026-09-14",
+      "charged": null
+    },
+    {
+      "date": "2026-09-15",
+      "charged": null
+    },
+    {
+      "date": "2026-09-16",
+      "charged": null
+    },
+    {
+      "date": "2026-09-17",
+      "charged": null
+    },
+    {
+      "date": "2026-09-18",
+      "charged": null
+    },
+    {
+      "date": "2026-09-19",
+      "charged": null
+    },
+    {
+      "date": "2026-09-20",
+      "charged": null
+    },
+    {
+      "date": "2026-09-21",
+      "charged": null
+    },
+    {
+      "date": "2026-09-22",
+      "charged": null
+    },
+    {
+      "date": "2026-09-23",
+      "charged": null
+    },
+    {
+      "date": "2026-09-24",
       "charged": null
     }
   ],

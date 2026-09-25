@@ -1,8 +1,8 @@
 {
-  "date": "2026-09-24",
-  "generated_at": "2026-09-24T17:30:30.409097",
+  "date": "2026-09-25",
+  "generated_at": "2026-09-25T07:00:06.371390",
   "full_name": "Ashif sheriff",
-  "metrics_date": "2026-09-24",
+  "metrics_date": "2026-09-25",
   "is_stale": false,
   "summary": {},
   "last_sync": "2026-09-07T18:05:14",
@@ -29,11 +29,6 @@
     "vo2_max": null
   },
   "steps_trend": [
-    {
-      "calendarDate": "2026-08-26",
-      "totalSteps": null,
-      "stepGoal": 6940
-    },
     {
       "calendarDate": "2026-08-27",
       "totalSteps": null,
@@ -178,13 +173,14 @@
       "calendarDate": "2026-09-24",
       "totalSteps": null,
       "stepGoal": null
+    },
+    {
+      "calendarDate": "2026-09-25",
+      "totalSteps": null,
+      "stepGoal": null
     }
   ],
   "battery_trend": [
-    {
-      "date": "2026-09-11",
-      "charged": null
-    },
     {
       "date": "2026-09-12",
       "charged": null
@@ -235,6 +231,10 @@
     },
     {
       "date": "2026-09-24",
+      "charged": null
+    },
+    {
+      "date": "2026-09-25",
       "charged": null
     }
   ],

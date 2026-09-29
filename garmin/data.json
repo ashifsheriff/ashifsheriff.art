@@ -1,190 +1,18 @@
 {
-  "date": "2026-09-28",
-  "generated_at": "2026-09-28T07:07:41.968445",
+  "date": "2026-09-29",
+  "generated_at": "2026-09-29T07:05:25.910441",
   "full_name": "Ashif sheriff",
-  "metrics_date": "2026-09-28",
+  "metrics_date": "2026-09-29",
   "is_stale": false,
   "summary": {},
   "last_sync": "2026-09-07T18:05:14",
   "last_sync_device": "Descent G2",
-  "sleep": {
-    "sleep_seconds": null,
-    "sleep_score": null,
-    "sleep_score_qualifier": null,
-    "deep_sleep_seconds": 0,
-    "light_sleep_seconds": 0,
-    "rem_sleep_seconds": 0,
-    "awake_seconds": 0,
-    "avg_sleep_stress": null,
-    "avg_spo2_percent": null
-  },
+  "sleep": {},
   "hrv": {},
   "readiness": {},
-  "training_status": {
-    "training_status_feedback": null,
-    "chronic_load": null,
-    "acute_load": null,
-    "optimal_chronic_load_min": null,
-    "optimal_chronic_load_max": null,
-    "vo2_max": null
-  },
-  "steps_trend": [
-    {
-      "calendarDate": "2026-08-30",
-      "totalSteps": null,
-      "stepGoal": 5510
-    },
-    {
-      "calendarDate": "2026-08-31",
-      "totalSteps": 4966,
-      "stepGoal": 5510
-    },
-    {
-      "calendarDate": "2026-09-01",
-      "totalSteps": 7801,
-      "stepGoal": 5410
-    },
-    {
-      "calendarDate": "2026-09-02",
-      "totalSteps": 4572,
-      "stepGoal": 5650
-    },
-    {
-      "calendarDate": "2026-09-03",
-      "totalSteps": 7770,
-      "stepGoal": 5550
-    },
-    {
-      "calendarDate": "2026-09-04",
-      "totalSteps": 10220,
-      "stepGoal": 5780
-    },
-    {
-      "calendarDate": "2026-09-05",
-      "totalSteps": 1913,
-      "stepGoal": 6670
-    },
-    {
-      "calendarDate": "2026-09-06",
-      "totalSteps": 947,
-      "stepGoal": 6200
-    },
-    {
-      "calendarDate": "2026-09-07",
-      "totalSteps": null,
-      "stepGoal": 5150
-    },
-    {
-      "calendarDate": "2026-09-08",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-09",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-10",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-11",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-12",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-13",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-14",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-15",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-16",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-17",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-18",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-19",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-20",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-21",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-22",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-23",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-24",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-25",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-26",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-27",
-      "totalSteps": null,
-      "stepGoal": null
-    },
-    {
-      "calendarDate": "2026-09-28",
-      "totalSteps": null,
-      "stepGoal": null
-    }
-  ],
+  "training_status": {},
+  "steps_trend": [],
   "battery_trend": [
-    {
-      "date": "2026-09-15",
-      "charged": null
-    },
     {
       "date": "2026-09-16",
       "charged": null
@@ -235,6 +63,10 @@
     },
     {
       "date": "2026-09-28",
+      "charged": null
+    },
+    {
+      "date": "2026-09-29",
       "charged": null
     }
   ],
